@@ -21,6 +21,7 @@ public class VideogameEditAdapter extends VideogameAdapter{
 
     @Override
     public void onBindViewHolder(@NonNull VideogameAdapter.ViewHolder holder, int position) {
+        //overwriting the base VideogameAdapter to make the edit/delete buttons visible
         VideoGameModal modal = videoGameModalArrayList.get(position);
         holder.videogamenametext.setText(modal.getGameName());
         holder.videogamegenretext.setText(modal.getGameGenre());
@@ -29,6 +30,7 @@ public class VideogameEditAdapter extends VideogameAdapter{
         holder.deletebtn.setVisibility(View.VISIBLE);
         holder.editbtn.setVisibility(View.VISIBLE);
 
+        //adding delete functionality to the delete button
         holder.deletebtn.setOnClickListener(view -> {
             dbHandler.deleteGame(modal.getGameName());
             Toast.makeText(context, "Deleted the game!", Toast.LENGTH_SHORT).show();
@@ -36,6 +38,7 @@ public class VideogameEditAdapter extends VideogameAdapter{
             context.startActivity(i);
         });
 
+        //passing the relevant info in extras to the ModifyGame Activity
         holder.editbtn.setOnClickListener(view -> {
             Intent i = new Intent(context, ModifyGameActivity.class);
 

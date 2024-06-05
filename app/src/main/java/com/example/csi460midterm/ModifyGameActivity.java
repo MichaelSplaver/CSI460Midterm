@@ -33,7 +33,7 @@ public class ModifyGameActivity extends AppCompatActivity {
         gameDescriptionEdt.setText(getIntent().getStringExtra("description"));
 
         updateGameBtn.setOnClickListener(view -> {
-
+            //validating the inputted values
             if (gameRatingEdt.getText().toString().isEmpty()) {
                 Toast.makeText(this, "Please enter a rating between 1-10", Toast.LENGTH_SHORT).show();
                 return;
@@ -48,15 +48,17 @@ public class ModifyGameActivity extends AppCompatActivity {
                 Toast.makeText(this, "Please enter all the data..", Toast.LENGTH_SHORT).show();
                 return;
             }
+            //updating the database with the new values for the game
             dbHandler.updateGame(gameNameEdt.getText().toString(), gameGenreEdt.getText().toString(), gameRating, gameDescriptionEdt.getText().toString());
-
+            //notifying the user of success
             Toast.makeText(this, "Game Updated..", Toast.LENGTH_SHORT).show();
-
+            //change to the modifying/deleting games activity
             Intent i = new Intent(this, EditDeleteGameActivity.class);
             startActivity(i);
         });
 
         backBtn.setOnClickListener(view -> {
+            //back button moves us to the previous activity
             Intent i = new Intent(this, EditDeleteGameActivity.class);
             startActivity(i);
         });

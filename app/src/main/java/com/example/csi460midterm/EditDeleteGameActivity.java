@@ -33,7 +33,7 @@ public class EditDeleteGameActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         videogameEditDeleteRV.setLayoutManager(linearLayoutManager);
 
-        // setting our adapter to recycler view.
+        // setting our adapter to modified recycler view with the edit/delete icons.
         videogameEditDeleteRV.setAdapter(videogameEditAdapter);
         backBtn.setOnClickListener(view -> {
             Intent intent = new Intent(this, MainActivity.class);

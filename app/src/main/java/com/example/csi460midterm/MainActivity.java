@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //setting up the main activity buttons to take us to the right respective activities
         modifyDeleteGameBtn = findViewById(R.id.modifydeletegamebtn);
         addNewGameBtn = findViewById(R.id.addgamebtn);
         viewDatabaseBtn = findViewById(R.id.viewdbbtn);

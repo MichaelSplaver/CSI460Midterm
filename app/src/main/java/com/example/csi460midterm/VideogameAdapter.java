@@ -32,6 +32,7 @@ public class VideogameAdapter extends RecyclerView.Adapter<VideogameAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        //setting edit and delete buttons to be invisible on this adapter
         VideoGameModal modal = videoGameModalArrayList.get(position);
         holder.videogamenametext.setText(modal.getGameName());
         holder.videogamegenretext.setText(modal.getGameGenre());

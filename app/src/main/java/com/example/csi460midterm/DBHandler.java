@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 
 public class DBHandler extends SQLiteOpenHelper {
+    //static values for the "games" table
     private static final String DB_NAME = "gamesdb";
     private static final int DB_VERSION = 1;
     private static final String TABLE_NAME = "games";
@@ -24,6 +25,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //SQL Query to create the "games" table
         String query = "CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + NAME_COL + " TEXT,"
@@ -35,6 +37,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     public void addNewGame(String gameName, String gameGenre, int gameRating, String gameDescription) {
+        //method to insert a new game into the database
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -48,6 +51,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     public ArrayList<VideoGameModal> readGames() {
+        //method to read out all the games in the "games" table
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursorCourses = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
@@ -68,6 +72,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public void updateGame(String gameName, String gameGenre,
                              int gameRating, String gameDescription) {
+        //method to update an existing game in the database by the game name
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -82,6 +87,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     public void deleteGame(String gameName) {
+        //method to delete an existing game in the database by its name
 
         SQLiteDatabase db = this.getWritableDatabase();
 

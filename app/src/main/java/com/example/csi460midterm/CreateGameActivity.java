@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 public class CreateGameActivity extends AppCompatActivity {
 
     private EditText inputGameName, inputGameGenre, inputGameRating, inputGameDesc;
@@ -31,7 +32,7 @@ public class CreateGameActivity extends AppCompatActivity {
         
         createNewGameBtn.setOnClickListener(view -> {
 
-
+            //getting the inputted values and validating them to be acceptable before continuing
             String gameName = inputGameName.getText().toString();
             String gameGenre = inputGameGenre.getText().toString();
             String gameRatingText = (inputGameRating.getText().toString());
@@ -51,17 +52,17 @@ public class CreateGameActivity extends AppCompatActivity {
                 return;
             }
 
-            // on below line we are calling a method to add new
-            // course to sqlite data and pass all our values to it.
+            //making call to the database to create a new game
             dbHandler.addNewGame(gameName, gameGenre, gameRating, gameDesc);
-
-            // after adding the data we are displaying a toast message.
+            //display a message to the user
             Toast.makeText(this, "The game has been added!", Toast.LENGTH_SHORT).show();
+            //show the database activity with the new game to the user
             Intent intent = new Intent(this, ViewDatabase.class);
             startActivity(intent);
         });
 
         backBtn.setOnClickListener(view -> {
+            //back button simply returns user to the main activity
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
         });
