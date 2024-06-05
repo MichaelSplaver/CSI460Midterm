@@ -66,7 +66,7 @@ public class DBHandler extends SQLiteOpenHelper {
         return gameModalArrayList;
     }
 
-    public void updateGame(int gameID, String gameName, String gameGenre,
+    public void updateGame(String gameName, String gameGenre,
                              int gameRating, String gameDescription) {
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -77,15 +77,15 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(RATING_COL, gameRating);
         values.put(DESCRIPTION_COL, gameDescription);
 
-        db.update(TABLE_NAME, values, "id=?", new String[]{(String.valueOf(gameID))});
+        db.update(TABLE_NAME, values, "name=?", new String[]{gameName});
         db.close();
     }
 
-    public void deleteCourse(int gameID) {
+    public void deleteGame(String gameName) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        db.delete(TABLE_NAME, "id=?", new String[]{(String.valueOf(gameID))});
+        db.delete(TABLE_NAME, "name=?", new String[]{gameName});
         db.close();
     }
 

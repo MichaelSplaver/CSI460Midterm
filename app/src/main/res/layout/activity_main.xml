@@ -58,7 +58,7 @@
             android:id="@+id/modifydeletegamebtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add New Game"
+            android:text="Modify or Delete Game"
             android:layout_below="@id/addgamebtn"
             android:layout_marginVertical="20dp"
             android:backgroundTint="#4A4949"

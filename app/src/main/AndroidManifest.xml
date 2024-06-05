@@ -15,6 +15,12 @@
         android:theme="@style/Theme.CSI460Midterm"
         tools:targetApi="31">
         <activity
+            android:name=".ModifyGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditDeleteGameActivity"
+            android:exported="false" />
+        <activity
             android:name=".CreateGameActivity"
             android:exported="false" />
         <activity

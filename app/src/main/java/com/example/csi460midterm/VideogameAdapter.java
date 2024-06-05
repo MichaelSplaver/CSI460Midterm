@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,8 +16,8 @@ import java.util.ArrayList;
 
 public class VideogameAdapter extends RecyclerView.Adapter<VideogameAdapter.ViewHolder> {
 
-    private ArrayList<VideoGameModal> videoGameModalArrayList;
-    private Context context;
+    public ArrayList<VideoGameModal> videoGameModalArrayList;
+    public Context context;
 
     public VideogameAdapter(ArrayList<VideoGameModal> videoGameModalArrayList, Context context) {
         this.videoGameModalArrayList = videoGameModalArrayList;
@@ -36,19 +37,8 @@ public class VideogameAdapter extends RecyclerView.Adapter<VideogameAdapter.View
         holder.videogamegenretext.setText(modal.getGameGenre());
         holder.videogameratingtext.setText("Rating: " + modal.getGameRating() + "/10");
         holder.videogamedesctext.setText(modal.getGameDescription());
-
-//        holder.itemView.setOnClickListener(v -> {
-//
-//            Intent i = new Intent(context, UpdateCourseActivity.class);
-//
-//            i.putExtra("name", modal.getCourseName());
-//            i.putExtra("description", modal.getCourseDescription());
-//            i.putExtra("duration", modal.getCourseDuration());
-//            i.putExtra("tracks", modal.getCourseTracks());
-//
-//            // starting our activity.
-//            context.startActivity(i);
-//        });
+        holder.deletebtn.setVisibility(View.INVISIBLE);
+        holder.editbtn.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -57,15 +47,17 @@ public class VideogameAdapter extends RecyclerView.Adapter<VideogameAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView videogamenametext, videogamegenretext, videogameratingtext, videogamedesctext;
+        public TextView videogamenametext, videogamegenretext, videogameratingtext, videogamedesctext;
+        public ImageView editbtn, deletebtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            // initializing our text views
             videogamenametext = itemView.findViewById(R.id.gamenamecard);
             videogamegenretext = itemView.findViewById(R.id.gamegenrecard);
             videogameratingtext = itemView.findViewById(R.id.gameratingcard);
             videogamedesctext = itemView.findViewById(R.id.gamedesccard);
+            editbtn = itemView.findViewById(R.id.editimg);
+            deletebtn = itemView.findViewById(R.id.closeimg);
         }
     }
 }

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         modifyDeleteGameBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(this, ViewDatabase.class);
+            Intent intent = new Intent(this, EditDeleteGameActivity.class);
             startActivity(intent);
         });
     }
