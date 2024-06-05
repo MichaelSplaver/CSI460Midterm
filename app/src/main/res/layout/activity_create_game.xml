@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CreateGameActivity"
+    android:background="#1B1B1B">
+
+    <TextView
+        android:id="@+id/addgametitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Video Game"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#B5B5B5"
+        android:paddingBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/inputgamename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter Game Name"
+        android:textColorHint="#757575"
+        android:textColor="#B5B5B5"/>
+
+    <EditText
+        android:id="@+id/inputgamegenre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter Game Genre"
+        android:textColorHint="#757575"
+        android:textColor="#B5B5B5"/>
+
+    <EditText
+        android:id="@+id/inputgamerating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter Game Rating (1-10)"
+        android:inputType="numberSigned"
+        android:textColorHint="#757575"
+        android:textColor="#B5B5B5"/>
+
+    <EditText
+        android:id="@+id/inputgamedesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Enter Course Description"
+        android:textColorHint="#757575"
+        android:textColor="#B5B5B5"/>
+
+    <Button
+        android:id="@+id/addnewgamebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Add Game"
+        android:textAllCaps="false"
+        android:backgroundTint="#4A4949"
+        android:layout_gravity="center"
+        android:paddingHorizontal="65dp" />
+
+    <Button
+        android:id="@+id/backbtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Back"
+        android:textAllCaps="false"
+        android:backgroundTint="#4A4949"
+        android:layout_gravity="center"
+        android:paddingHorizontal="85dp" />
+
+</LinearLayout>

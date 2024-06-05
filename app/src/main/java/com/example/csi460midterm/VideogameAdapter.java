@@ -34,7 +34,7 @@ public class VideogameAdapter extends RecyclerView.Adapter<VideogameAdapter.View
         VideoGameModal modal = videoGameModalArrayList.get(position);
         holder.videogamenametext.setText(modal.getGameName());
         holder.videogamegenretext.setText(modal.getGameGenre());
-        holder.videogameratingtext.setText(modal.getGameRating());
+        holder.videogameratingtext.setText("Rating: " + modal.getGameRating() + "/10");
         holder.videogamedesctext.setText(modal.getGameDescription());
 
 //        holder.itemView.setOnClickListener(v -> {

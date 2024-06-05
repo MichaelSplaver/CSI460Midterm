@@ -20,17 +20,17 @@ public class MainActivity extends AppCompatActivity {
         viewDatabaseBtn = findViewById(R.id.viewdbbtn);
 
         viewDatabaseBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, ViewDatabase.class);
+            Intent intent = new Intent(this, ViewDatabase.class);
             startActivity(intent);
         });
 
         addNewGameBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, ViewDatabase.class);
+            Intent intent = new Intent(this, CreateGameActivity.class);
             startActivity(intent);
         });
 
         modifyDeleteGameBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, ViewDatabase.class);
+            Intent intent = new Intent(this, ViewDatabase.class);
             startActivity(intent);
         });
     }
