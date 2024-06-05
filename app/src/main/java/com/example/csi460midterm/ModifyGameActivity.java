@@ -52,12 +52,12 @@ public class ModifyGameActivity extends AppCompatActivity {
 
             Toast.makeText(this, "Game Updated..", Toast.LENGTH_SHORT).show();
 
-            Intent i = new Intent(this, MainActivity.class);
+            Intent i = new Intent(this, EditDeleteGameActivity.class);
             startActivity(i);
         });
 
         backBtn.setOnClickListener(view -> {
-            Intent i = new Intent(this, MainActivity.class);
+            Intent i = new Intent(this, EditDeleteGameActivity.class);
             startActivity(i);
         });
     }

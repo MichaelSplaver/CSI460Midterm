@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Enter Course Description"
+        android:hint="Enter Game Description"
         android:textColorHint="#757575"
         android:textColor="#B5B5B5"/>
 
